@@ -6,6 +6,8 @@ export default function Navbar() {
   return (
     <div>
         <NavLink to ="/">Home</NavLink>
+        
+        <NavLink to ="/AddProject">Add Project</NavLink>
     </div>
   );
 }

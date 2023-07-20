@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AddProject from "../components/AddProject"; //  <== IMPORT
  
 const API_URL = "http://localhost:5005";
  
@@ -15,8 +16,6 @@ function ProjectListPage() {
       .catch((error) => console.log(error));
   };
  
-  // We set this effect will run only once, after the initial render
-  // by setting the empty dependency array - []
   useEffect(() => {
     getAllProjects();
   }, [] );
@@ -24,6 +23,9 @@ function ProjectListPage() {
   
   return (
     <div className="ProjectListPage">
+      
+      {/*    ADD     */}
+      <AddProject refreshProjects={getAllProjects} />
       
         {projects.map((project) => {
           return (
